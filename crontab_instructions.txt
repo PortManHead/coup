@@ -1,0 +1,13 @@
+To get the 'sensor.py' to run once every 5 minutes, I run 'crontab -e' and put the following line into it:
+
+*/5 * * * * sudo /home/porter/coup/sensorLog.py  >> /home/porter/sensorLog.txt 2>&1
+
+(You'll need to modify it, unless your username is 'porter'
+
+This will output both stdout and stderr into the file sensorLog.txt.
+
+If you don't want error messages in your log file, remove the '2>&1' at the end of the line.
+
+If you do this, error messages will be sent to you by email.  To read them, you'll need install mail a Mail Transfer Agent (MTA) and email client:
+    sudo apt-get install postfix
+    sudo apt-get install mutt
