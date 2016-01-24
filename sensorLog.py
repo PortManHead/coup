@@ -2,8 +2,10 @@
 import sys
 import time
 import Adafruit_DHT
+import config
 
-sensorPins = {1:23, 2:24, 3:25, 4:8}
+sensorPins = config.sensorPins
+#sensorPins = {1:23, 2:24, 3:25, 4:8}
 
 
 def Main():
