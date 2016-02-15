@@ -27,10 +27,10 @@ class Sensor:
             self.name = values[2]
         self.temp = -1
         self.humidity = -1
-        self.GetTempHumidity()
+        self.CheckSensor()
 
 
-    def GetTempHumidity(self):
+    def CheckSensor(self):
         sensor_args = { 11: Adafruit_DHT.DHT11,
                         22: Adafruit_DHT.DHT22,
                         2302: Adafruit_DHT.AM2302 }
@@ -52,6 +52,7 @@ class Sensor:
         if self.name:
             label += " (%s)" % self.name
         label += ":"
+        return label
 
 
 
