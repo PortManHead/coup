@@ -12,10 +12,11 @@ relays = config.GetRelays()
 
 def Main():
     print TimeMessage() 
-    for num, sensor in sensors.iteritems():
-        print sensor.LogMessage()
+    #for num, sensor in sensors.iteritems():
+        #print sensor.LogMessage()
 
     MaintainHeat(sensors[1], relays[1], 45, 55)
+    MaintainHeat(sensors[2], relays[2], 45, 55)
 
 
 def TimeMessage():

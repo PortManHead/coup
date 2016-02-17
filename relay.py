@@ -4,18 +4,18 @@ globalSetupDone = False
 
 class Relay:
     def __init__(self, in_id, pin):
-        self.pin = pin
         self.id = in_id
-        GPIO.setup(self.id, GPIO.OUT)
+        self.pin = pin
+        GPIO.setup(self.pin, GPIO.OUT)
 
     def TurnOn(self):
-        GPIO.output(self.pin, FALSE)
+        GPIO.output(self.pin, False)
 
     def TurnOff(self):
         GPIO.output(self.pin, True)
 
     def IsOn(self):
-        input = GPIO.input(self.pin)
+        return not GPIO.input(self.pin)
 
 
 def GlobalSetup():
